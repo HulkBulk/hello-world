@@ -1,2 +1,3 @@
 # hello-world
-LOVE MATH
+I am newbie in GitHub :p
+I would like to show some statistics view from Football game 
