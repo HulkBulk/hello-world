@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import json
 import matplotlib.pyplot as plt
-plt.show()
 def splitDataPerMatch(file='PremierLeague2011-12MatchbyMatch.csv'):
 	"""Split all data per match and date
 		@params: file path to analys football stats
@@ -85,17 +84,21 @@ def forceGraph(match_stat):
 			#json.dumps(stats_weight,'weigthedmeta.json')
 			#raw_input()
 			denom = 0.0
+			counter1 = 0.0
 			for keystat in stats:
 				try:
 					if 'unsucess' in keystat.lower():
 						participation += float(stats[keystat])*(-1)
 						denom += -1
+						counter1 +=1
 					elif 'sucessful' in keystat.lower():
 						participation += float(stats[keystat])*1
 						denom += 1
+						counter1 +=1
 					else:
 						participation += float(stats[keystat])
 						denom += 1
+						counter1 += 1
 				except:
 					print 'No float in to ',keystat
 					
